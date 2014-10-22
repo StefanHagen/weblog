@@ -1,0 +1,15 @@
+.row-fluid
+  .col-md-2
+    %ul.nav.nav-pills.nav-stacked
+      %p.text-uppercase= "Weblog / new post"
+      = sub_menu_item(:posts, [:admin, :posts], menu_active?(:posts), "th-list")
+  .col-md-10
+    = form_for(@post, :url => admin_posts_path) do |f|
+      .form-group
+        = f.text_field :title, :label => false, :class => "form-control", :placeholder => t("admin.placeholders.title")
+      .form-group
+        = f.text_area :lead, :label => false, :class => "form-control", :placeholder => t("admin.placeholders.lead")
+      .form-group
+        = f.text_area :body, :label => false, :class => "form-control", :placeholder => t("admin.placeholders.body")
+      .form-group
+        = f.submit :submit, :class => "btn btn-primary"

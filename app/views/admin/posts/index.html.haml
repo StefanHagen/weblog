@@ -1,0 +1,15 @@
+.col-md-2
+  %ul.nav.nav-pills.nav-stacked
+    %p.text-uppercase= "Weblog / posts"
+    = sub_menu_item(:new_post, [:new, :admin, :post], menu_active?(:posts), "plus")
+.col-md-10
+  %table.table.table-striped
+    %thead
+      %tr
+        %th= t("admin.posts.table.title")
+        %th= t("admin.posts.table.lead")
+    %tbody
+      - @posts.each do |post|
+        %tr
+          %td= post.title
+          %td= post.lead

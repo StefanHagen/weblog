@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+# Create standard administrator account when none is present.d
+if Administrator.first.blank?
+  Administrator.create(:first_name => 'Stefan', :last_name => 'last_name', :email => 'stefan.hgn@gmail.com', :password => 'stefanhagen', :password_confirmation => 'stefanhagen')
+end

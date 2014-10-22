@@ -1,0 +1,13 @@
+%nav.navbar.navbar-default
+  .container-fluid
+    .navbar-header
+      %button.navbar-toggle.collapsed{ :type => "button", :data => { :toggle => "collapse", :target => "#main-navigation-collapse" } }
+        %span.sr-only
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      = link_to(t("admin.navigation.brand"), [:admin, :root], :class => "navbar-brand")
+
+    #main-navigation-collapse.collapse.navbar-collapse
+      %ul.nav.navbar-nav
+        = menu_item(:posts, [:admin, :posts], menu_active?(:posts))

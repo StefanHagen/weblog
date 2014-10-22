@@ -20,4 +20,74 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  ## Public section texts
+
+  # General texts
+  general: 
+    title: " | Stefan Hagen"
+
+  posts:
+    title: "Blog"
+
+  ## Admin namespace texts
+  admin:
+
+    # General texts
+    general:
+      title: " | Weblog Admin"
+
+    # Form PLaceholders
+    placeholders:
+      email: "Email"
+      password: "Password"
+      sign_in: "Sign in"
+      title: "Title"
+      lead: "Lead"
+      body: "Body"
+
+    # Navigation
+    navigation:
+      brand: "Stefan Hagen"
+      posts: "Posts"
+
+    # Sub Navigation
+    sub_navigation:
+      posts: " Posts"
+      new_post: " New Post"
+
+    # Session texts
+    sessions:
+      title: "Sessions"
+      create:
+        success: "You are now logged in!"
+        error: "Something went wrong! Wrong password or username?"
+      destroy:
+        success: "You are now logged out!"
+
+    # Administrator texts
+    administrators:
+      title: "Administrators"
+      create:
+        success: "Administrator was successfully created!"
+        error: "Something went wrong! Could not create Administrator..."
+      update:
+        success: "Administrator was successfully updated"
+        error: "Something went wrong! Could not update Administrator..."
+      destroy:
+        success: "Administrator was successfully destroyed!"
+
+    # Post texts
+    posts:
+      title: "Posts"
+      create:
+        success: "Post was successfully created!"
+        error: "Something went wrong! Could not create Post..."
+      update:
+        success: "Post was successfully updated"
+        error: " Something went wrong! Could not create Post..."
+      destroy:
+        success: "Post was successfully destroyed"
+      table:
+        title: "Titel"
+        lead: "Lead"
+
