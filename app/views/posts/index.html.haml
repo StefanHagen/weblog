@@ -1,0 +1,10 @@
+- @posts.each do |post|
+  .post
+    %h2= post.title
+    %p.lead= markdown(post.lead)
+    %p= markdown(post.body)
+    .tags
+      .tag.technical
+        %span.glyphicon.glyphicon-cog
+      .tag.misc
+        %span.glyphicon.glyphicon-asterisk

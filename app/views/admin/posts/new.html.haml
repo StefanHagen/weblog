@@ -8,6 +8,8 @@
       .form-group
         = f.text_field :title, :label => false, :class => "form-control", :placeholder => t("admin.placeholders.title")
       .form-group
+        = f.select :tag_ids, Tag.all.collect {|t| [t.name, t.id]}, {}, :multiple => true, :class => "form-control bootstrap-multiselect"
+      .form-group
         = f.text_area :lead, :label => false, :class => "form-control", :placeholder => t("admin.placeholders.lead")
       .form-group
         = f.text_area :body, :label => false, :class => "form-control", :placeholder => t("admin.placeholders.body")

@@ -25,6 +25,14 @@ en:
   # General texts
   general: 
     title: " | Stefan Hagen"
+    brand: "Stefan Hagen"
+
+  # Navigation menu texts
+  navigation:
+    posts: "Blog"
+    projects: "Projects"
+    about: "About"
+    contact: "Contact"
 
   posts:
     title: "Blog"

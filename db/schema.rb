@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141022092624) do
+ActiveRecord::Schema.define(version: 20150116131725) do
 
   create_table "administrators", force: true do |t|
     t.string   "first_name"
@@ -20,6 +20,10 @@ ActiveRecord::Schema.define(version: 20141022092624) do
     t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   create_table "posts", force: true do |t|
@@ -29,6 +33,34 @@ ActiveRecord::Schema.define(version: 20141022092624) do
     t.integer  "administrator_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "projects", force: true do |t|
+    t.string   "title"
+    t.text     "lead"
+    t.text     "body"
+    t.integer  "administrator_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "taggings", force: true do |t|
+    t.integer  "tag_id"
+    t.integer  "taggable_id"
+    t.string   "taggable_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tags", force: true do |t|
+    t.string   "slug"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "icon_file_name"
+    t.string   "icon_content_type"
+    t.integer  "icon_file_size"
+    t.datetime "icon_updated_at"
   end
 
 end

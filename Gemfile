@@ -30,6 +30,14 @@ gem 'will_paginate-bootstrap'
 gem 'bootstrap-wysihtml5-rails'
 # Possibility of nicely truncating html
 gem 'truncate_html'
+# Use Redcarpet to render Markdown
+gem 'redcarpet'
+# Syntax Highlighting
+gem 'albino'
+gem 'pygments.rb'
+# Parse HTML
+gem 'nokogiri'
+
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',                   group: :development
 gem "quiet_assets",             group: :development

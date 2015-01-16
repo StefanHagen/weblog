@@ -1,8 +1,8 @@
-class Post < ActiveRecord::Base
+class Project < ActiveRecord::Base
 
   # Associations
   belongs_to :administrator
-  has_many :taggings, :as => :taggable, :dependent => :destroy
+  has_many :taggings, :as => :taggable
   has_many :tags, :through => :taggings
 
   # Scopes
@@ -11,5 +11,5 @@ class Post < ActiveRecord::Base
 
   # Pagination
   self.per_page = 30
-
+  
 end

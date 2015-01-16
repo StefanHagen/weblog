@@ -15,5 +15,46 @@
 //= require bootstrap.min
 //= require bootstrap-wysihtml5
 //= require bootstrap-wysihtml5/locales
+//= require bootstrap-multiselect
 //= require turbolinks
 //= require_tree .
+
+var ready;
+ready = function() {
+
+  // Admin Namespace
+  bootstrapMultiSelect();
+
+  // Root
+  centerNavOrbs();
+  detectScrollPosition();
+}
+
+$(document).ready(ready);
+$(document).on("page:load", ready);
+
+// Loop through .orb's and center them onto their respective buttons
+function centerNavOrbs(){
+  $(".orb").each(function(){
+    parent_width = $(this).parent().width();
+    margin_left = (parent_width/2) - 8;
+    $(this).css("margin-left", margin_left + "px");
+  })
+}
+
+// This function reads the scrollposition when the scroll event is fired, and toggles the nav shadow
+function detectScrollPosition(){
+  $(window).scroll(function(){
+    position = $(this).scrollTop()
+    toggleNavShadow(position);
+  })
+}
+
+// Fade the navbar shadow in and out, based on the scrollposition
+function toggleNavShadow(position){
+  if(position > 0){
+    $(".radial-shadow").fadeIn();
+  } else {
+    $(".radial-shadow").fadeOut();
+  }
+}

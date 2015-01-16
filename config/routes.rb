@@ -12,9 +12,14 @@ Rails.application.routes.draw do
 
     # Resources
     resources :posts
-
+    resources :projects
+    resources :tags
+    
   end
 
   # Public part of the website
+  root 'posts#index'
+  
+  resources :posts
 
 end

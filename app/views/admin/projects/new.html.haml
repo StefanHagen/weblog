@@ -1,11 +1,10 @@
 .row-fluid
   .col-md-2
     %ul.nav.nav-pills.nav-stacked
-      %p.text-uppercase= "Weblog / edit post"
-      = sub_menu_item(:posts, [:admin, :posts], menu_active?(:posts), "th-list")
-      = sub_menu_item(:new_post, [:new, :admin, :post], menu_active?(:posts), "plus")
+      %p.text-uppercase= "Weblog / new project"
+      = sub_menu_item(:projects, [:admin, :projects], menu_active?(:projects), "th-list")
   .col-md-10
-    = form_for(@post, :url => admin_post_path) do |f|
+    = form_for(@project, :url => admin_projects_path) do |f|
       .form-group
         = f.text_field :title, :label => false, :class => "form-control", :placeholder => t("admin.placeholders.title")
       .form-group

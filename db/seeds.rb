@@ -8,5 +8,13 @@
 
 # Create standard administrator account when none is present.d
 if Administrator.first.blank?
-  Administrator.create(:first_name => 'Stefan', :last_name => 'last_name', :email => 'stefan.hgn@gmail.com', :password => 'stefanhagen', :password_confirmation => 'stefanhagen')
+  Administrator.create(:first_name => 'Stefan', :last_name => 'Hagen', :email => 'stefan@stefanhagen.nl', :password => 'stefanhagen', :password_confirmation => 'stefanhagen')
+end
+
+if Tag.first.blank?
+  Tag.create(:slug => 'ruby', :name => "Ruby")
+end
+
+if Post.first.blank?
+  Post.create(:title => "This is your first blogpost!", :lead => "This is the lead paragraph", :body => "This is the main body text", :administrator_id => 1)
 end

@@ -1,0 +1,10 @@
+.radial-shadow
+#navigation-bar
+  #navigation-container
+    .brand
+      %h1= t("general.brand")
+    %ul.menu
+      = front_menu_item(:posts, :posts, menu_active?(:posts))
+      = front_menu_item(:projects, [:admin, :posts], menu_active?(:projects))
+      = front_menu_item(:about, [:admin, :posts], menu_active?(:pages))
+      = front_menu_item(:contact, [:admin, :posts], menu_active?(:pages))

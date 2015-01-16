@@ -1,0 +1,64 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require bootstrap.min
+ *= require bootstrap-wysihtml5
+ *= require bootstrap-multiselect.min
+ *= require_tree .
+ *= require_self
+ */
+
+/* /////////////////////////////////////////////////////////// GENERAL STYLES */
+
+$background-color: #ffffff;
+$primary-color: #960300;
+$secondary-color: #363636;
+$selection-color: #bc5449;
+$font-stack-serif: Baskerville, Georgia, serif;
+$font-stack-sans-serif: Helvetica, sans-serif;
+
+* { margin: 0px; border: none; padding: 0px; }
+body { font-family: $font-stack-sans-serif; }
+pre { border-radius: 0px; }
+::selection { background: $selection-color; }
+::-moz-selection { background: $selection-color; }
+#content-container { width: 800px; margin: 0px auto; padding: 100px; }
+
+/* /////////////////////////////////////////////////////////// TYPGRAPHY */
+
+#content-container h2 { text-align: center; font-size: 22px; font-weight: 200; }
+#content-container p { font-size: 15px; font-weight: 200; }
+#content-container ul { margin-left: 17px; }
+#content-container img { display: block; margin: 30px auto; }
+
+/* /////////////////////////////////////////////////////////// NAVIGATION */
+
+#navigation-bar { background-color: $background-color; width: 100%; height: 60px; position: fixed; top: 0px; left: 0px; border-width: 0px 0px 2px 0px; border-style: solid; border-color: $primary-color; z-index: 100; }
+#navigation-container { width: 800px; height: 58px; margin: 0px auto; }
+#navigation-container .brand { height: 58px; width: 200px; float: left; }
+#navigation-container .brand h1 { font-family: $font-stack-sans-serif; font-size: 14px; font-weight: bold; margin: 0px; line-height: 58px; color: $secondary-color; text-transform: uppercase; }
+#navigation-container ul.menu { float: right; margin-left: 0px; }
+#navigation-container ul.menu li { display: inline; list-style-type: none; float: left; }
+#navigation-container ul.menu li a { font-family: $font-stack-sans-serif; display: block; height: 58px; padding: 0px 0px 0px 50px; color: $secondary-color; line-height: 58px; font-weight: normal; font-size: 14px; text-decoration: none; text-transform: uppercase; }
+#navigation-container ul.menu li a:hover { color: $primary-color; }
+#navigation-container ul.menu li.active a { color: $primary-color; font-weight: bold; }
+#navigation-container ul.menu li.active a .orb { width: 16px; height: 16px; background-color: $primary-color; position: absolute; bottom: -8px; border-radius: 8px; }
+
+.radial-shadow { -webkit-box-shadow:0 0px 4px rgba(0, 0, 0, 0.2); box-shadow:0 0px 4px rgba(0, 0, 0, 0.2); display: none; }
+.radial-shadow { position:fixed; width: 100%; height: 60px; -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3); box-shadow:0 1px 4px rgba(0, 0, 0, 0.3); }
+.radial-shadow:after{ content:""; position:absolute; z-index: -1; -webkit-box-shadow:0 0 40px rgba(0,0,0,0.5); box-shadow:0 0 40px rgba(0,0,0,0.5); bottom:0px; left:10%; right:10%; width:80%; height:50%; -moz-border-radius:100%; border-radius:100%; }
+
+/* /////////////////////////////////////////////////////////// POSTS */
+
+.post { position: relative; }
+.tags { position: absolute; top: 50px; left: -100px; width: 100px; padding: 0px 20px; z-index: 5; }
+.tag { width: 60px; height: 60px; text-align: center; line-height: 67px; color: $background-color; background-color: $primary-color; font-size: 30px; border-radius: 30px; margin-bottom: 10px; }

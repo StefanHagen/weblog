@@ -8,5 +8,6 @@ class CreateAdministrators < ActiveRecord::Migration
 
       t.timestamps
     end
+    add_attachment :administrators, :avatar
   end
 end

@@ -1,0 +1,15 @@
+.col-md-2
+  %ul.nav.nav-pills.nav-stacked
+    %p.text-uppercase= "Weblog / projects"
+    = sub_menu_item(:new_project, [:new, :admin, :project], menu_active?(:projects), "plus")
+.col-md-10
+  %table.table.table-striped
+    %thead
+      %tr
+        %th= t("admin.projects.table.title")
+        %th= t("admin.projects.table.lead")
+    %tbody
+      - @projects.each do |project|
+        %tr
+          %td= project.title
+          %td= project.lead
