@@ -11,8 +11,14 @@ Rails.application.routes.draw do
     get "logout" => "sessions#destroy", :as => :logout
 
     # Resources
-    resources :posts
-    resources :projects
+    resources :posts do
+      resources :comments
+    end
+
+    resources :projects do
+      resources :comments
+    end
+
     resources :tags
     
   end
@@ -20,6 +26,14 @@ Rails.application.routes.draw do
   # Public part of the website
   root 'posts#index'
   
-  resources :posts
+  resources :posts do 
+    resources :comments
+  end
+
+  resources :projects do
+    resources :comments
+  end
+
+  resources :tags
 
 end

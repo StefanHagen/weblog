@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150116131725) do
+ActiveRecord::Schema.define(version: 20150116152329) do
 
   create_table "administrators", force: true do |t|
     t.string   "first_name"
@@ -26,20 +26,35 @@ ActiveRecord::Schema.define(version: 20150116131725) do
     t.datetime "avatar_updated_at"
   end
 
+  create_table "comments", force: true do |t|
+    t.string   "user"
+    t.string   "email"
+    t.text     "body"
+    t.integer  "commentable_id"
+    t.string   "commentable_type"
+    t.boolean  "published",        default: true
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "posts", force: true do |t|
     t.string   "title"
+    t.string   "slug"
     t.text     "lead"
     t.text     "body"
     t.integer  "administrator_id"
+    t.boolean  "published"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "projects", force: true do |t|
     t.string   "title"
+    t.string   "slug"
     t.text     "lead"
     t.text     "body"
     t.integer  "administrator_id"
+    t.boolean  "published"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

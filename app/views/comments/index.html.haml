@@ -1,0 +1,7 @@
+%h2 Comments
+
+- @comments.each do |comment|
+  = comment.user
+  = comment.body
+
+= link_to("New Comment", [:new, @commentable, :comment])

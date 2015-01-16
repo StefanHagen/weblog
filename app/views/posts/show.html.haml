@@ -1,0 +1,7 @@
+.post
+  %h2= @post.title
+  %p.lead= markdown(@post.lead)
+  %p= markdown(@post.body)
+  
+= render "comments/comments"
+= render "comments/form"

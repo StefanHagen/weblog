@@ -1,0 +1,6 @@
+%h2 Comments
+
+- if @comments
+  - @comments.each do |comment|
+    = comment.user
+    = comment.body

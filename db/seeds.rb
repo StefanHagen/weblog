@@ -10,11 +10,3 @@
 if Administrator.first.blank?
   Administrator.create(:first_name => 'Stefan', :last_name => 'Hagen', :email => 'stefan@stefanhagen.nl', :password => 'stefanhagen', :password_confirmation => 'stefanhagen')
 end
-
-if Tag.first.blank?
-  Tag.create(:slug => 'ruby', :name => "Ruby")
-end
-
-if Post.first.blank?
-  Post.create(:title => "This is your first blogpost!", :lead => "This is the lead paragraph", :body => "This is the main body text", :administrator_id => 1)
-end
