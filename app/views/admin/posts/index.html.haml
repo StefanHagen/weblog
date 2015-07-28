@@ -3,13 +3,31 @@
     %p.text-uppercase= "Weblog / posts"
     = sub_menu_item(:new_post, [:new, :admin, :post], menu_active?(:posts), "plus")
 .col-md-10
-  %table.table.table-striped
+  %table.table.table-striped.table-condensed
     %thead
       %tr
-        %th= t("admin.posts.table.title")
-        %th= t("admin.posts.table.lead")
+        %th.buttons
+        %th= t("admin.table.title")
+        %th= t("admin.table.slug")
+        %th.extra-small
+          %span.glyphicon.glyphicon-cloud-upload
+        %th.text-right.datestamp= t("admin.table.published_on")
     %tbody
       - @posts.each do |post|
         %tr
+          %td.buttons
+            = link_to [:edit, :admin, post], :class => "btn btn-warning", :data => { :no_turbolink => true } do
+              %span.glyphicon.glyphicon-pencil
+            = link_to [:admin, post], :class => "btn btn-danger", :method => :delete, :data => { :confirm => t("admin.table.delete_confirm") } do
+              %span.glyphicon.glyphicon-trash
           %td= post.title
-          %td= post.lead
+          %td= post.slug
+          %td
+            = form_for(post, :url => admin_post_path(post), :method => :put, :class => "form-inline") do |f|
+              = f.hidden_field :published_on, :value => DateTime.now
+              = f.check_box :published, :class => "ajax-checkbox"
+          %td.text-right
+            - if post.published == true
+              = post.published_on.strftime("%e %B %Y at %H:%M")
+            - else
+              .text-muted= t("admin.table.not_published")

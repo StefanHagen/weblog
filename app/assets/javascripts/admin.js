@@ -4,3 +4,9 @@
 function bootstrapMultiSelect(){
   $(".bootstrap-multiselect").multiselect();
 }
+
+function activateBooleanFields(){
+  $(".ajax-checkbox").click(function(){
+    $(this).parent().submit();
+  });
+}

@@ -57,6 +57,5 @@ private
 
   # Set parameter permissions for post
   def project_params
-    params.require(:project).permit(:title, :lead, :body, :administrator_id, :tag_ids)
-  end
+    params.require(:project).permit(:title, :slug, :lead, :body, :administrator_id, :published, :published_on, :tag_ids)
 end

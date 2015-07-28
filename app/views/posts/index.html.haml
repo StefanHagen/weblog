@@ -1,10 +1,18 @@
+.page-title
+  %h2= t("page_titles.posts.index")
+
 - @posts.each do |post|
-  .post
-    %h2= post.title
+  = link_to post, :class => "post-summary" do
+    %h3= post.title
+    .dateline= post.published_on.strftime("%B %e, %Y at %H:%M")
     %p.lead= markdown(post.lead)
-    %p= markdown(post.body)
-    .tags
-      .tag.technical
-        %span.glyphicon.glyphicon-cog
-      .tag.misc
-        %span.glyphicon.glyphicon-asterisk
+    
+  / .post
+  /   %h2= post.title
+  /   %p.lead= markdown(post.lead)
+  /   %p= markdown(post.body)
+  /   .tags
+  /     .tag.technical
+  /       %span.glyphicon.glyphicon-cog
+  /     .tag.misc
+  /       %span.glyphicon.glyphicon-asterisk

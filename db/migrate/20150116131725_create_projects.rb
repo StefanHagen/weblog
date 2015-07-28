@@ -6,7 +6,7 @@ class CreateProjects < ActiveRecord::Migration
       t.text :lead
       t.text :body
       t.integer :administrator_id
-      t.boolean :published
+      t.boolean :published, :default => false
       
       t.timestamps
     end

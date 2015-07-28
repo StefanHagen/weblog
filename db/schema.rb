@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150116152329) do
+ActiveRecord::Schema.define(version: 20150505222355) do
 
   create_table "administrators", force: true do |t|
     t.string   "first_name"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20150116152329) do
     t.integer  "commentable_id"
     t.string   "commentable_type"
     t.boolean  "published",        default: true
+    t.datetime "published_on"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -43,7 +44,8 @@ ActiveRecord::Schema.define(version: 20150116152329) do
     t.text     "lead"
     t.text     "body"
     t.integer  "administrator_id"
-    t.boolean  "published"
+    t.boolean  "published",        default: false
+    t.datetime "published_on"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -54,7 +56,8 @@ ActiveRecord::Schema.define(version: 20150116152329) do
     t.text     "lead"
     t.text     "body"
     t.integer  "administrator_id"
-    t.boolean  "published"
+    t.boolean  "published",        default: false
+    t.datetime "published_on"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -68,8 +71,8 @@ ActiveRecord::Schema.define(version: 20150116152329) do
   end
 
   create_table "tags", force: true do |t|
-    t.string   "slug"
     t.string   "name"
+    t.string   "slug"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "icon_file_name"

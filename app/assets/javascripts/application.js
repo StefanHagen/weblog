@@ -24,6 +24,7 @@ ready = function() {
 
   // Admin Namespace
   bootstrapMultiSelect();
+  activateBooleanFields();
 
   // Root
   centerNavOrbs();

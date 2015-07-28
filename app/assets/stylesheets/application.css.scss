@@ -17,28 +17,31 @@
  *= require_self
  */
 
+
 /* /////////////////////////////////////////////////////////// GENERAL STYLES */
 
 $background-color: #ffffff;
 $primary-color: #960300;
 $secondary-color: #363636;
+$lightgrey-color: #eeeeee;
+$darkgrey-color: #666666;
 $selection-color: #bc5449;
-$font-stack-serif: Baskerville, Georgia, serif;
-$font-stack-sans-serif: Helvetica, sans-serif;
+$text-color: #212121;
+
+$font-stack-sans-serif: "Helvetica Neue", Helvetica, sans-serif;
+$font-stack-extralight: "neutonextralight", Baskerville, Georgia, serif;
+$font-stack-light: "neutonlight", Baskerville, Georgia, serif;
+$font-stack-regular: "neutonregular", Baskerville, Georgia, serif;
+$font-stack-bold: "neutonbold", Baskerville, Georgia, serif;
+$font-stack-extrabold: "neutonextrabold", Baskerville, Georgia, serif;
+$font-stack-italic: "neutonitalic", Baskerville, Georgia, serif;
 
 * { margin: 0px; border: none; padding: 0px; }
-body { font-family: $font-stack-sans-serif; }
+body { font-family: $font-stack-regular; color: $text-color; }
 pre { border-radius: 0px; }
 ::selection { background: $selection-color; }
 ::-moz-selection { background: $selection-color; }
 #content-container { width: 800px; margin: 0px auto; padding: 100px; }
-
-/* /////////////////////////////////////////////////////////// TYPGRAPHY */
-
-#content-container h2 { text-align: center; font-size: 22px; font-weight: 200; }
-#content-container p { font-size: 15px; font-weight: 200; }
-#content-container ul { margin-left: 17px; }
-#content-container img { display: block; margin: 30px auto; }
 
 /* /////////////////////////////////////////////////////////// NAVIGATION */
 
@@ -57,8 +60,25 @@ pre { border-radius: 0px; }
 .radial-shadow { position:fixed; width: 100%; height: 60px; -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3); box-shadow:0 1px 4px rgba(0, 0, 0, 0.3); }
 .radial-shadow:after{ content:""; position:absolute; z-index: -1; -webkit-box-shadow:0 0 40px rgba(0,0,0,0.5); box-shadow:0 0 40px rgba(0,0,0,0.5); bottom:0px; left:10%; right:10%; width:80%; height:50%; -moz-border-radius:100%; border-radius:100%; }
 
+/* /////////////////////////////////////////////////////////// GENERAL PAGE ELEMENTS */
+
+#content-container { font-size: 20px; font-family: $font-stack-regular; }
+.page-title h2 { font-family: $font-stack-bold; text-align: center; font-size: 24px; }
+
 /* /////////////////////////////////////////////////////////// POSTS */
 
+a.post-summary { display: block; width: 100%; color: $text-color; margin: 20px 0px; padding: 10px; }
+a.post-summary:hover { color: $text-color; text-decoration: none; background-color: $lightgrey-color; }
+a.post-summary h3 { font-family: $font-stack-bold; text-align: left; font-size: 22px; padding: 0px; margin: 0px; }
+a.post-summary .dateline { width: 100%; padding: 5px 0px; font-size: 12px; font-family: $font-stack-italic; color: $darkgrey-color; }
+a.post-summary p { margin: 0px; font-size: 18px; }
+
 .post { position: relative; }
+.post h2 { font-family: $font-stack-bold; text-align: center; font-size: 22px; }
+.post p { font-size: 20px; }
+.post ul { margin-left: 17px; }
+.post img { display: block; margin: 30px auto; max-width: 100%; }
+.post blockquote { margin: 20px 0px; }
+.post blockquote p { font-family: $font-stack-italic; color: $darkgrey-color; font-size: 16px; }
 .tags { position: absolute; top: 50px; left: -100px; width: 100px; padding: 0px 20px; z-index: 5; }
 .tag { width: 60px; height: 60px; text-align: center; line-height: 67px; color: $background-color; background-color: $primary-color; font-size: 30px; border-radius: 30px; margin-bottom: 10px; }

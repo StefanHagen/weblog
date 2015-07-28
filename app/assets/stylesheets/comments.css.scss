@@ -1,3 +1,21 @@
 // Place all the styles related to the comments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$background-color: #ffffff;
+$primary-color: #960300;
+$secondary-color: #363636;
+$selection-color: #bc5449;
+
+$font-stack-sans-serif: "Helvetica Neue", Helvetica, sans-serif;
+$font-stack-extralight: "neutonextralight", Baskerville, Georgia, serif;
+$font-stack-light: "neutonlight", Baskerville, Georgia, serif;
+$font-stack-regular: "neutonregular", Baskerville, Georgia, serif;
+$font-stack-bold: "neutonbold", Baskerville, Georgia, serif;
+$font-stack-extrabold: "neutonextrabold", Baskerville, Georgia, serif;
+$font-stack-italic: "neutonitalic", Baskerville, Georgia, serif;
+
+.comment-form input, .comment-form textarea { border: 1px solid $primary-color; width: 100%; float: left; clear: left; }
+.comment-form input { height: 30px; margin-bottom: 10px; }
+.comment-form textarea { margin-bottom: 10px; }
+.comment-form input[type="submit"] { background-color: $primary-color; color: $background-color; }

@@ -8,10 +8,12 @@
       .form-group
         = f.text_field :title, :label => false, :class => "form-control", :placeholder => t("admin.placeholders.title")
       .form-group
+        = f.text_field :slug, :label => false, :class => "form-control", :placeholder => t("admin.placeholders.slug")
+      .form-group
         = f.select :tag_ids, Tag.all.collect {|t| [t.name, t.id]}, {}, :multiple => true, :class => "form-control bootstrap-multiselect"
       .form-group
-        = f.text_area :lead, :label => false, :class => "form-control", :placeholder => t("admin.placeholders.lead")
+        = f.text_area :lead, :label => false, :class => "form-control", :placeholder => t("admin.placeholders.lead"), :rows => "5"
       .form-group
-        = f.text_area :body, :label => false, :class => "form-control", :placeholder => t("admin.placeholders.body")
+        = f.text_area :body, :label => false, :class => "form-control", :placeholder => t("admin.placeholders.body"), :rows => "15"
       .form-group
         = f.submit :submit, :class => "btn btn-primary"

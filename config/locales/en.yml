@@ -34,6 +34,10 @@ en:
     about: "About"
     contact: "Contact"
 
+  page_titles:
+    posts:
+      index: "Latest blogposts"
+
   posts:
     title: "Blog"
 
@@ -50,8 +54,12 @@ en:
       password: "Password"
       sign_in: "Sign in"
       title: "Title"
+      slug: "Slug"
       lead: "Lead"
       body: "Body"
+      published: "Published"
+      created: "Created At"
+      updated: "Updated At"
 
     # Navigation
     navigation:
@@ -62,6 +70,19 @@ en:
     sub_navigation:
       posts: " Posts"
       new_post: " New Post"
+
+    # Table Headers
+    table:
+      title: "Title"
+      slug: "Slug"
+      lead: "Lead Copy"
+      body: "Body Copy"
+      author: "Author"
+      published: "Published"
+      published_on: "Publishing Date"
+      not_published: "Not Published"
+      delete_confirm: "Are you sure you want to delete this item? This can not be undone!"
+
 
     # Session texts
     sessions:

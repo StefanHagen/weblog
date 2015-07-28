@@ -2,7 +2,7 @@ class Admin::PostsController < AdminController
   before_action :find_post, :only => [:show, :edit, :update, :destroy]
 
   def index
-    @posts = Post.recently_created.paginate(:page => params[:page])
+    @posts = Post.current_author(current_admin.id).recently_created.paginate(:page => params[:page])
   end
 
   def show
@@ -16,6 +16,10 @@ class Admin::PostsController < AdminController
   def create
     @post = Post.new(post_params)
     @post.administrator_id = current_admin.id
+    if params[:post][:slug].blank?
+      @post.slug = @post.title
+    end
+    @post.slug = @post.slug.downcase.gsub!(" ", "-")
     params[:post][:tag_ids].each do |tag_id|
       @post.tags << Tag.find(tag_id.to_i) unless tag_id == ""
     end
@@ -32,8 +36,10 @@ class Admin::PostsController < AdminController
   end
 
   def update
-    params[:post][:tag_ids].each do |tag_id|
-      @post.tags << Tag.find(tag_id.to_i) unless tag_id == ""
+    if params[:post][:tag_ids]
+      params[:post][:tag_ids].each do |tag_id|
+        @post.tags << Tag.find(tag_id.to_i) unless tag_id == ""
+      end
     end
     if @post.update_attributes(post_params)
       redirect_to([:admin, :posts], :notice => I18n.t("admin.posts.create.success"))
@@ -57,7 +63,7 @@ private
 
   # Set parameter permissions for post
   def post_params
-    params.require(:post).permit(:title, :lead, :body, :administrator_id, :tag_ids)
+    params.require(:post).permit(:title, :slug, :lead, :body, :administrator_id, :published, :published_on, :tag_ids)
   end
 
 end

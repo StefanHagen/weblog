@@ -7,6 +7,7 @@ class Post < ActiveRecord::Base
   has_many :comments, :as => :commentable, :dependent => :destroy
 
   # Scopes
+  scope :current_author, ->(author_id) { where(:administrator_id => author_id)}
   scope :published, -> { where("published = true") }
   scope :recently_created, -> { order("created_at DESC") }
   scope :recently_updated, -> { order("updated_at DESC") }
